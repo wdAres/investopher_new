@@ -1,0 +1,50 @@
+@media screen and (max-width:1200px){
+    header {
+        padding: 10px 50px;
+    }
+}
+
+@media screen and (max-width:1000px){
+    header {
+        padding: 10px 30px;
+    }
+    header nav{
+        display: none;
+    }
+    header > button:nth-child(3){
+        display: none;
+    }
+    header .toggle_button{
+        display: block;
+    }
+
+    .form_section {
+        padding: 30px;
+        flex-wrap: wrap;
+    }
+    
+    .form_section > div {
+        width: 100% !important;
+    }
+    
+    .form_section > div:nth-child(2) {
+        margin-top: 60px;
+    }
+
+    .footer_top{
+        row-gap: 20px;
+    }
+
+    .footer_top > div{
+        width: 100% !important;
+    }
+}
+
+@media screen and (max-width:500px){
+    .footer_top {
+        padding: 30px;
+    }
+    .form_section > div:nth-child(1) h1 {
+        font-size: 27px;
+    }
+}

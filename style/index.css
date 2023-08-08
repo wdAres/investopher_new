@@ -1,0 +1,474 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 90px;
+}
+
+header .logo img {
+    width: 130px;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 70%;
+}
+
+header nav>a,
+header nav>div {
+    position: relative;
+    text-decoration: none;
+    display: flex;
+    height: 85px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 14px;
+    color: black;
+}
+
+header nav>div:hover .drop_down {
+    display: flex !important;
+}
+
+.drop_down {
+    position: absolute;
+    flex-direction: column;
+    top: 81px;
+    left: 0;
+    width: 190px;
+    padding: 10px 0;
+    display: none;
+    z-index: 5;
+    border: 1px solid #ededed;
+    background: #fbfbfb;
+}
+
+.drop_down div:hover .drop_down2 {
+    display: flex !important;
+}
+
+.drop_down2 {
+    position: absolute;
+    flex-direction: column;
+    right: -190px;
+    width: 190px;
+    padding: 10px 0;
+    display: none;
+    top: 31px;
+    border: 1px solid #ededed;
+    background: #fbfbfb;
+}
+
+.drop_down>div,
+.drop_down>a,
+.drop_down2>a {
+    text-decoration: none;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background: #fbfbfb;
+    padding-left: 10px;
+    color: black;
+    font-size: 14px;
+}
+
+
+.drop_down>div:hover,
+.drop_down>a:hover,
+.drop_down2>a:hover {
+    background-color: #f9f9f9;
+}
+
+header button:nth-child(3) {
+    width: 170px;
+    height: 35px;
+    border-radius: 4px;
+    border: none;
+    background: #00508f;
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+header button:nth-child(3)>a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.toggle_button {
+    padding: 3px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    display: none;
+}
+
+
+/* Sidebar */
+
+.sidebar {
+    position: fixed;
+    width: 260px;
+    background: whitesmoke;
+    z-index: 2;
+    height: 100vh;
+    top: 0;
+    padding: 20px;
+    left: -100%;
+    transition: 0.2s ease;
+}
+
+.sidebar_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sidebar_header>img {
+    width: 130px;
+}
+
+.sidebar_header>button {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.sidebar_body {
+    padding-top: 50px;
+    height: 100%;
+    overflow: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+
+
+.sidebar_body::-webkit-scrollbar {
+    display: none;
+}
+
+
+
+
+.sidebar_body>a,
+.sidebar_body>div {
+    display: flex;
+    align-items: flex-start;
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    flex-direction: column;
+    width: 100%;
+    min-height: 40px;
+    margin-bottom: 10px;
+    border: none;
+    background: none;
+}
+
+.sidebar_body>div>button {
+    display: flex;
+    align-items: flex-start;
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    flex-direction: column;
+    width: 100%;
+    min-height: 40px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.sidebar_body>div:hover .sidebar_drop_down {
+    display: flex !important;
+}
+
+.sidebar_body>div>.sidebar_drop_down {
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    align-items: baseline;
+    background: #e7e7e7;
+    z-index: 2;
+    border: 1px solid #c9c9c9;
+    height: 0;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.sidebar_drop_down.show_ {
+    height: max-content !important;
+    padding: 10px;
+}
+
+.sidebar_body>div>.sidebar_drop_down>div,
+.sidebar_body>div>.sidebar_drop_down>div>button,
+.sidebar_body>div>.sidebar_drop_down>a {
+    min-height: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    text-decoration: none;
+    padding-left: 10px;
+    color: #555555;
+    cursor: pointer;
+    border: none;
+}
+
+.sidebar_body>div>.sidebar_drop_down>div>button {
+    background-color: transparent;
+    cursor: pointer;
+    padding-left: 0;
+}
+
+.sidebar .drop_down2 {
+    display: block;
+    position: unset;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    padding: 0;
+    width: 95%;
+}
+
+.sidebar .drop_down2>a {
+    font-size: 12px;
+}
+
+.sidebar .drop_down2.show_ {
+    height: max-content;
+}
+
+
+.open_sidebar {
+    left: 0;
+}
+
+
+/* Section */
+.form_section {
+    padding: 30px 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.form_section>div {
+    width: 50%;
+}
+
+.form_section>div:nth-child(1) {}
+
+.form_section>div:nth-child(1) h3 {
+    font-size: 13px;
+    font-weight: 500;
+    color: #00508f;
+    margin-bottom: 50px;
+}
+
+.form_section>div:nth-child(1) h1 {
+    font-size: 43px;
+    font-weight: 500;
+    line-height: 44px;
+    margin-bottom: 35px;
+    color: #313131;
+}
+
+.form_section>div:nth-child(1) p {
+    font-size: 14px;
+    line-height: 28px;
+    color: #666666;
+
+    margin-bottom: 50px;
+}
+
+.form_section>div:nth-child(1) div {
+    display: flex;
+    column-gap: 10px;
+}
+
+.form_section>div:nth-child(1) div img {
+    width: 50%;
+    height: 156px;
+}
+
+.form_section>div:nth-child(1) button {
+    margin-top: 40px;
+    display: flex;
+    width: 180px;
+    height: 45px;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: #00508f;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+}
+
+.form_section>div:nth-child(2) {}
+
+.form_section>div:nth-child(2) {
+    width: 45%;
+    /* margin-inline: auto; */
+    background: #829ab1;
+    padding: 20px;
+    border-radius: 6px;
+    position: relative;
+    height: 400px;
+}
+
+.form_section>div:nth-child(2)>form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    background: white;
+    padding: 20px;
+    border-radius: 6px;
+    position: absolute;
+    width: 90%;
+    top: -32px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+}
+
+.form_section>div:nth-child(2)>form h1 {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    color: #00508f;
+}
+
+.form_section>div:nth-child(2)>form input,
+.form_section>div:nth-child(2)>form select {
+    height: 42px;
+    border-radius: 4px;
+    border: 1px solid #cdcdcd;
+    padding-left: 10px;
+    outline: none;
+}
+
+.form_section>div:nth-child(2)>form button {
+    height: 50px;
+    font-size: 17px;
+    font-weight: 500;
+    border-radius: 5px;
+    /* margin-top: 10px; */
+    border: none;
+    color: white;
+    background: #00508f;
+}
+
+
+
+/* Footer */
+.footer {
+    background: #0e2f4f;
+}
+
+span.colored_span {
+    color: yellow;
+    display: block;
+}
+
+.footer a:hover {
+    color: #40a0c6;
+}
+
+.footer p,
+.footer a {
+    color: white;
+    font-size: 13px;
+    display: block;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+.footer h3 {
+    color: white;
+    font-weight: 500;
+    margin-bottom: 24px;
+}
+
+.footer_top {
+    padding: 50px 90px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer_top>div {
+    width: 25%;
+    padding: 0 10px;
+}
+
+.footer_top>div:nth-child(2),
+.footer_top>div:nth-child(3) {
+    width: 20%;
+}
+
+.footer_top>div h1 {
+    font-size: 23px;
+    color: white;
+    font-weight: 500;
+}
+
+.footer_top>div:nth-child(1)>div {
+    display: flex;
+    margin: 13px 0;
+}
+
+.footer_top>div:nth-child(1)>div span {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.footer_top>div:nth-child(1)>div span i {
+    color: white;
+    font-size: 13px;
+}
+
+.footer_top>div:nth-child(1)>div span:nth-child(1) {
+    background: #3b5998;
+
+}
+
+.footer_top>div:nth-child(1)>div span:nth-child(2) {
+    background: #48a1f2;
+}
+
+.footer_top>div:nth-child(1)>div span:nth-child(3) {
+    background: #cd201f;
+}
+
+.footer_bottom {
+    border-top: 0.2px solid white;
+    padding: 20px;
+    text-align: center;
+    font-size: 13px;
+    color: white;
+}
