@@ -26,14 +26,15 @@ include 'inc/header.php'
 
          <h3>Contact Form</h3>
 
+         <div>
+            <a href="excel_export_all.php" class="btn btn-dark"><i class="fas fa-file-excel text-white"></i></a>
+         </div>
       </div>
 
 
 
       <table class="table">
-
          <tr>
-
             <th>ID</th>
 
             <th>Name</th>
@@ -42,6 +43,7 @@ include 'inc/header.php'
             <th>Phone</th>
 
             <th>Selected Option</th>
+            <th>Export</th>
 
 
          </tr>
@@ -56,20 +58,23 @@ include 'inc/header.php'
 
          while ($item = mysqli_fetch_array($select)) {
 
-               $inc++ ?>
+            $inc++ ?>
 
-               <tr>
+            <tr>
 
-                  <td><?php echo $inc; ?></td>
+               <td><?php echo $inc; ?></td>
 
-                  <td class="text-nowrap"><?php echo $item['name']; ?></td>
+               <td class="text-nowrap"><?php echo $item['name']; ?></td>
 
-                  <td class="text-nowrap"><?php echo $item['email']; ?></td>
-                  <td class="text-nowrap"><?php echo $item['phone']; ?></td>
+               <td class="text-nowrap"><?php echo $item['email']; ?></td>
+               <td class="text-nowrap"><?php echo $item['phone']; ?></td>
 
-                  <td class="text-nowrap"><?php echo $item['options']; ?></td>
+               <td class="text-nowrap"><?php echo $item['options']; ?></td>
 
-               </tr>
+               <td class="text-nowrap">
+                  <a href="excel_export_id.php?id=<?php echo $item["id"]; ?>" class="btn btn-dark"><i class="fas fa-file-excel text-white"></i></a>
+               </td>
+            </tr>
 
          <?php }
          ?>
